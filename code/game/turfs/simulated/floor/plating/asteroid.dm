@@ -101,9 +101,19 @@
 	return
 
 /turf/open/floor/plating/asteroid/singularity_act()
+	src.ChangeTurf(/turf/open/space)
 	return
 
 /turf/open/floor/plating/asteroid/singularity_pull(S, current_size)
+	if(current_size == STAGE_THREE)
+		if(prob(30))
+			src.gets_dug()
+	else if(current_size == STAGE_FOUR)
+		if(prob(50))
+			src.gets_dug()
+	else if(current_size >= STAGE_FIVE)
+		if(prob(70))
+			src.gets_dug()
 	return
 
 
