@@ -306,7 +306,13 @@
 	dat += "Cores: [linked_cores.len]<BR><BR>"
 	dat += "-Current Efficiency: [reported_core_efficiency]<BR>"
 	dat += "-Average Stability: [stored_core_stability] <A href='?src=\ref[src];refreshstability=1'>(update)</A><BR>"
-	dat += "Last Produced: [stored_power]<BR>"
+	var/displaypower = stored_power
+	if(displaypower < 1000000) //less than a MW
+		displaypower /= 1000
+		dat += "Last Produced: [round(displaypower,0.01)] kW<BR>"
+	else
+		displaypower /= 1000000
+		dat += "Last Produced: [round(displaypower,0.01)] MW<BR>"
 
 	dat += "Fuel: "
 	if(!fueljar)
