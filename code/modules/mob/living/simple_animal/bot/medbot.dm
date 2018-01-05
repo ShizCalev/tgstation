@@ -350,7 +350,7 @@
 	if(C.suiciding)
 		return FALSE //Kevorkian school of robotic medical assistants.
 
-	if(ishuman(C))
+	if(ishuman(C) && !(emagged == 2))
 		var/mob/living/carbon/human/H = C
 		if((H.head && (H.head.flags_1 & THICKMATERIAL_1)) && (H.wear_suit && (H.wear_suit.flags_1 & THICKMATERIAL_1)))
 			return FALSE // Skip over them if they have no exposed flesh.
