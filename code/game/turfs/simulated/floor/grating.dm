@@ -1,7 +1,12 @@
+//todo - clean up plane switching for pipes/wires/ect. test to make sure no unintended effects.
+//make damaged icons
+//fix decal overlays
+//kill the batman
+
 /turf/open/floor/grating
 	name = "grate-covered plating" //it's pretty great, isn't it?
 	desc = "A section of plating covered by a metal grate."
-	icon_state = "grating_map"
+	icon_state = "grating_map" //pretty degrating
 	intact = FALSE
 	floor_tile = /obj/item/stack/sheet/metal
 
@@ -9,19 +14,20 @@
 	burnt_states = list("burnt_grate")
 	var/burnt_and_broken_state = list("burnt_broken_grate")
 
+	var/grating_icon = "grate2" //temp
 	var/mutable_appearance/grate_overlay
-	var/cover_unscrewed = FALSE
+	var/cover_secured = TRUE
 
 /turf/open/floor/grating/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>The grate appears to be [cover_unscrewed ? "firmly screwed in place." : "unfastened. You might be able to lift it off with a <i>crowbar</i>."]</span>")
+	to_chat(user, "<span class='notice'>The grate appears to be [cover_secured ? "firmly screwed in place." : "unfastened. You might be able to lift it off with a <i>crowbar</i>."]</span>")
 
 /turf/open/floor/grating/Initialize(mapload)
 	. = ..()
 	if(mapload)
 		baseturfs += /turf/open/floor/plating
 	icon_state = "plating"
-	grate_overlay = mutable_appearance(icon, "grate_overlay", TURF_GRATE_LAYER)
+	grate_overlay = mutable_appearance(icon, grating_icon, TURF_GRATE_LAYER, FLOOR_PLANE)
 	add_overlay(grate_overlay)
 
 /turf/open/floor/grating/break_tile()
@@ -29,9 +35,9 @@
 		return
 	cut_overlay(grate_overlay)
 	if(burnt)
-		grate_overlay = mutable_appearance(icon, pick(burnt_and_broken_state), TURF_GRATE_LAYER)
+		grate_overlay = mutable_appearance(icon, pick(burnt_and_broken_state), TURF_GRATE_LAYER, FLOOR_PLANE)
 	else
-		grate_overlay = mutable_appearance(icon, pick(broken_states, TURF_GRATE_LAYER))
+		grate_overlay = mutable_appearance(icon, pick(broken_states, TURF_GRATE_LAYER, FLOOR_PLANE))
 	add_overlay(grate_overlay)
 	broken = TRUE
 
@@ -40,9 +46,9 @@
 		return
 	cut_overlay(grate_overlay)
 	if(broken)
-		grate_overlay = mutable_appearance(icon, pick(burnt_and_broken_state), TURF_GRATE_LAYER)
+		grate_overlay = mutable_appearance(icon, pick(burnt_and_broken_state), TURF_GRATE_LAYER, FLOOR_PLANE)
 	else
-		grate_overlay = mutable_appearance(icon, pick(burnt_states), TURF_GRATE_LAYER)
+		grate_overlay = mutable_appearance(icon, pick(burnt_states), TURF_GRATE_LAYER, FLOOR_PLANE)
 	add_overlay(grate_overlay)
 	burnt = TRUE
 
@@ -50,14 +56,14 @@
 	return
 
 /turf/open/floor/grating/screwdriver_act(mob/living/user, obj/item/I)
-	to_chat(user, "<span class='notice'>You start to [cover_unscrewed ? "unfasten" : "fasten"] the grate to the floor with [I].</span>")
+	to_chat(user, "<span class='notice'>You start to [cover_secured ? "unfasten" : "fasten"] the grate to the floor with [I].</span>")
 	if(!I.use_tool(src, user, 30, volume=50))
-		cover_unscrewed = !cover_unscrewed
-		to_chat(user, "<span class='notice'>You [cover_unscrewed ? "unfastened" : "fasten"] the grate with [I].</span>")
+		cover_secured = !cover_secured
+		to_chat(user, "<span class='notice'>You [cover_secured ? "unfastened" : "fasten"] the grate with [I].</span>")
 		return TRUE
 
 /turf/open/floor/grating/crowbar_act(mob/living/user, obj/item/I)
-	if(!cover_unscrewed)
+	if(!cover_secured)
 		return
 	to_chat(user, "<span class='notice'>You start trying to pry up the unfastened grate with [I].</span>")
 	if(I.use_tool(src, user, 30, volume=80))

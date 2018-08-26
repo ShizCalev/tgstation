@@ -3,7 +3,6 @@
 	var/volume = 0
 
 	level = 1
-
 	use_power = NO_POWER_USE
 	can_unwrench = 1
 	var/datum/pipeline/parent = null
@@ -47,6 +46,7 @@
 
 /obj/machinery/atmospherics/pipe/hide(i)
 	if(level == 1 && isturf(loc))
+		plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 		invisibility = i ? INVISIBILITY_MAXIMUM : 0
 	update_icon()
 

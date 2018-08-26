@@ -92,6 +92,7 @@
 // change visibility status and force update of icon
 /obj/structure/disposalpipe/hide(var/intact)
 	invisibility = intact ? INVISIBILITY_MAXIMUM: 0	// hide if floor is intact
+	plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 
 // expel the held objects into a turf
 // called when there is a break in the pipe

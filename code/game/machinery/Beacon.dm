@@ -25,6 +25,7 @@
 // update the invisibility and icon
 /obj/machinery/bluespace_beacon/hide(intact)
 	invisibility = intact ? INVISIBILITY_MAXIMUM : 0
+	plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 	updateicon()
 
 // update the icon_state

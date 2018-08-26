@@ -267,6 +267,7 @@
 		anchored = TRUE //otherwise you can start pulling, cover it, and drag around an invisible backpack.
 		icon_state = "[initial(icon_state)]2"
 	else
+		plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 		invisibility = initial(invisibility)
 		anchored = FALSE
 		icon_state = initial(icon_state)

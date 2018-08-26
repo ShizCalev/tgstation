@@ -123,6 +123,7 @@ By design, d1 is the smallest direction and d2 is the highest
 /obj/structure/cable/hide(i)
 
 	if(level == 1 && isturf(loc))
+		plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 		invisibility = i ? INVISIBILITY_MAXIMUM : 0
 	update_icon()
 

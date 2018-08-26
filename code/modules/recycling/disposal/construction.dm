@@ -63,6 +63,7 @@
 // change visibility status and force update of icon
 /obj/structure/disposalconstruct/hide(var/intact)
 	invisibility = (intact && level==1) ? INVISIBILITY_MAXIMUM: 0	// hide if floor is intact
+	plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 	update_icon()
 
 /obj/structure/disposalconstruct/proc/get_disposal_dir()

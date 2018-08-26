@@ -34,7 +34,7 @@ Iconnery
 	var/turf/T = loc
 	if(level == 2 || !T.intact)
 		showpipe = TRUE
-		plane = GAME_PLANE
+		plane = istype(T, /turf/open/floor/grating) ? FLOOR_PLANE : GAME_PLANE
 	else
 		showpipe = FALSE
 		plane = FLOOR_PLANE

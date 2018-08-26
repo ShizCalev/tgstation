@@ -72,6 +72,7 @@
 		if(tile_overlay)
 			loc.add_overlay(tile_overlay)
 	else
+		plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 		invisibility = initial(invisibility)
 		anchored = FALSE
 		icon_state = initial(icon_state)

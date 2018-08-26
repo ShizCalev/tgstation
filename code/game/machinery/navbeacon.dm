@@ -8,7 +8,7 @@
 	name = "navigation beacon"
 	desc = "A radio beacon used for bot navigation."
 	level = 1		// underfloor
-	layer = LOW_OBJ_LAYER
+	layer = NAV_BEACON_LAYER
 	max_integrity = 500
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 70, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
 
@@ -72,6 +72,7 @@
 // hide the object if turf is intact
 /obj/machinery/navbeacon/hide(intact)
 	invisibility = intact ? INVISIBILITY_MAXIMUM : 0
+	plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 	updateicon()
 
 // update the icon_state

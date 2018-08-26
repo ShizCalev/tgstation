@@ -29,6 +29,7 @@
 		invisibility = INVISIBILITY_MAXIMUM
 		icon_state = "term-f"
 	else
+		plane = istype(loc, /turf/open/floor/grating) ? FLOOR_PLANE : initial(plane)
 		invisibility = 0
 		icon_state = "term"
 
