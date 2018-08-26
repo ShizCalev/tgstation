@@ -40,6 +40,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("floor tile", /obj/item/stack/tile/plasteel, 1, 4, 20), \
 	new/datum/stack_recipe("metal rod", /obj/item/stack/rods, 1, 2, 60), \
+	new/datum/stack_recipe("metal grating", /obj/item/stack/sheet/grating, 1, 1, 20), \
 	null, \
 	new/datum/stack_recipe("wall girders", /obj/structure/girder, 2, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
@@ -132,6 +133,23 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 /obj/item/stack/sheet/metal/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
+
+/*
+ * Grating
+ */
+/obj/item/stack/sheet/grating
+	name = "metal grating"
+	desc = "A metal panel which allows for easy access to subfloor objects."
+	singular_name = "metal grate"
+	icon_state = "sheet-grating"
+	item_state = "sheet-grating"
+	merge_type = /obj/item/stack/sheet/grating
+	materials = list(MAT_METAL=MINERAL_MATERIAL_AMOUNT)
+	flags_1 = CONDUCT_1
+	resistance_flags = FIRE_PROOF
+	throwforce = 10
+	grind_results = list("iron" = 20)
+	point_value = 2
 
 /*
  * Plasteel

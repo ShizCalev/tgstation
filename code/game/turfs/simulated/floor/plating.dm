@@ -22,7 +22,7 @@
 		to_chat(user, "<span class='notice'>It looks like the dents could be <i>welded</i> smooth.</span>")
 		return
 	if(attachment_holes)
-		to_chat(user, "<span class='notice'>There are a few attachment holes for a new <i>tile</i> or reinforcement <i>rods</i>.</span>")
+		to_chat(user, "<span class='notice'>There are a few attachment points for a new <i>tile</i>, <i>grating</i> plates, or reinforcement <i>rods</i>.</span>")
 	else
 		to_chat(user, "<span class='notice'>You might be able to build ontop of it with some <i>tiles</i>...</span>")
 
@@ -81,6 +81,17 @@
 			playsound(src, 'sound/weapons/genhit.ogg', 50, 1)
 		else
 			to_chat(user, "<span class='warning'>This section is too damaged to support a tile! Use a welder to fix the damage.</span>")
+	else if(attachment_holes && istype(C, /obj/item/stack/sheet/grating))
+		if(broken || burnt)
+			to_chat(user, "<span class='warning'>Repair the plating first!</span>")
+			return
+		var/obj/item/stack/sheet/grating/G = C
+		if(!G.use(1))
+			return
+		PlaceOnTop(/turf/open/floor/grating)
+		playsound(src, 'sound/items/deconstruct.ogg', 100, 1)
+		to_chat(user, "<span class='notice'>You place the [G.singular_name] on the floor with a loud thud.</span>")
+
 
 /turf/open/floor/plating/welder_act(mob/living/user, obj/item/I)
 	if((broken || burnt) && I.use_tool(src, user, 0, volume=80))

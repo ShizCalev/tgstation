@@ -12,7 +12,7 @@
 	var/icon_plating = "plating"
 	thermal_conductivity = 0.040
 	heat_capacity = 10000
-	intact = 1
+	intact = TRUE
 	var/broken = 0
 	var/burnt = 0
 	var/floor_tile = null //tile that this floor drops
@@ -119,7 +119,7 @@
 	if(broken)
 		return
 	icon_state = pick(broken_states)
-	broken = 1
+	broken = TRUE
 
 /turf/open/floor/burn_tile()
 	if(broken || burnt)
@@ -128,9 +128,11 @@
 		icon_state = pick(burnt_states)
 	else
 		icon_state = pick(broken_states)
-	burnt = 1
+	burnt = TRUE
 
-/turf/open/floor/proc/make_plating()
+/turf/open/floor/proc/make_plating(force, drop_tile)
+	if(drop_tile)
+		new floor_tile(src)
 	return ScrapeAway()
 
 /turf/open/floor/ChangeTurf(path, new_baseturf, flags)
@@ -191,18 +193,15 @@
 	if(current_size == STAGE_THREE)
 		if(prob(30))
 			if(floor_tile)
-				new floor_tile(src)
-				make_plating()
+				make_plating(FALSE, TRUE)
 	else if(current_size == STAGE_FOUR)
 		if(prob(50))
 			if(floor_tile)
-				new floor_tile(src)
-				make_plating()
+				make_plating(FALSE, TRUE)
 	else if(current_size >= STAGE_FIVE)
 		if(floor_tile)
 			if(prob(70))
-				new floor_tile(src)
-				make_plating()
+				make_plating(FALSE, TRUE)
 		else if(prob(50))
 			ReplaceWithLattice()
 
