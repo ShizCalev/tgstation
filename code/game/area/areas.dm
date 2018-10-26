@@ -289,7 +289,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	set waitfor = FALSE
 	DOOR.close()
 	if(DOOR.density)
-		DOOR.lock()
+		DOOR.bolt(null, "burglar alarm")
 
 /area/proc/burglaralert(obj/trigger)
 	if(always_unpowered) //no burglar alarms in space/asteroid

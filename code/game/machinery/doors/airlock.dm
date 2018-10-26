@@ -58,6 +58,8 @@
 
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_REQUIRES_SILICON | INTERACT_MACHINE_OPEN
 
+	var/logging_power_primary
+	var/logging_power_secondary
 	var/security_level = 0 //How much are wires secured
 	var/aiControlDisabled = 0 //If 1, AI control is disabled until the AI hacks back in and disables the lock. If 2, the AI has bypassed the lock. If -1, the control is enabled but the AI had bypassed it earlier, so if it is disabled again the AI would have no trouble getting back in.
 	var/hackProof = FALSE // if true, this door can't be hacked by the AI
@@ -226,9 +228,9 @@
 				return
 
 			if(locked)
-				unbolt()
+				unbolt(null, "NTNet signal")
 			else
-				bolt()
+				bolt(null, "NTNet signal")
 
 		if("emergency")
 			if(command_value == "on" && emergency)
@@ -240,26 +242,24 @@
 			emergency = !emergency
 			update_icon()
 
-/obj/machinery/door/airlock/lock()
-	bolt()
-
-/obj/machinery/door/airlock/proc/bolt()
+/obj/machinery/door/airlock/bolt(mob/user, log_message)
 	if(locked)
 		return
 	locked = TRUE
-	playsound(src,boltDown,30,0,3)
+	playsound(src, boltDown, 30, TRUE, 3)
 	audible_message("<span class='italics'>You hear a click from the bottom of the door.</span>", null,  1)
+	if(user || log_message)
+		LAZYADD(logging_boltedby, "\[[time_stamp()]\] bolted by [user ? key_name(user) : log_message]")
 	update_icon()
 
-/obj/machinery/door/airlock/unlock()
-	unbolt()
-
-/obj/machinery/door/airlock/proc/unbolt()
+/obj/machinery/door/airlock/proc/unbolt(mob/user, log_message)
 	if(!locked)
 		return
 	locked = FALSE
-	playsound(src,boltUp,30,0,3)
+	playsound(src, boltUp, 30, TRUE, 3)
 	audible_message("<span class='italics'>You hear a click from the bottom of the door.</span>", null,  1)
+	if(user || log_message)
+		LAZYADD(logging_boltedby, "\[[time_stamp()]\] unbolted by [user ? key_name(user) : log_message]")
 	update_icon()
 
 /obj/machinery/door/airlock/narsie_act()
@@ -386,17 +386,19 @@
 	updateDialog()
 	update_icon()
 
-/obj/machinery/door/airlock/proc/loseMainPower()
+/obj/machinery/door/airlock/proc/loseMainPower(mob/user, log_message)
 	if(secondsMainPowerLost <= 0)
 		secondsMainPowerLost = 60
 		if(secondsBackupPowerLost < 10)
 			secondsBackupPowerLost = 10
 	if(!spawnPowerRestoreRunning)
 		spawnPowerRestoreRunning = TRUE
+	if(user || log_message)
+
 	INVOKE_ASYNC(src, .proc/handlePowerRestore)
 	update_icon()
 
-/obj/machinery/door/airlock/proc/loseBackupPower()
+/obj/machinery/door/airlock/proc/loseBackupPower(mob/user, log_message)
 	if(src.secondsBackupPowerLost < 60)
 		src.secondsBackupPowerLost = 60
 	if(!spawnPowerRestoreRunning)
@@ -1283,8 +1285,8 @@
 		obj_flags |= EMAGGED
 		lights = FALSE
 		locked = TRUE
-		loseMainPower()
-		loseBackupPower()
+		loseMainPower(user, "- emagged")
+		loseBackupPower(user, "- emagged")
 
 /obj/machinery/door/airlock/attack_alien(mob/living/carbon/alien/humanoid/user)
 	add_fingerprint(user)
@@ -1309,23 +1311,20 @@
 		if(density && !open(2)) //The airlock is still closed, but something prevented it opening. (Another player noticed and bolted/welded the airlock in time!)
 			to_chat(user, "<span class='warning'>Despite your efforts, [src] managed to resist your attempts to open it!</span>")
 
-/obj/machinery/door/airlock/hostile_lockdown(mob/origin)
+/obj/machinery/door/airlock/hostile_lockdown(mob/user)
 	// Must be powered and have working AI wire.
 	if(canAIControl(src) && !stat)
 		locked = FALSE //For airlocks that were bolted open.
 		safe = FALSE //DOOR CRUSH
 		close()
-		bolt() //Bolt it!
-		set_electrified(ELECTRIFIED_PERMANENT)  //Shock it!
-		if(origin)
-			LAZYADD(shockedby, "\[[time_stamp()]\] [key_name(origin)]")
+		bolt(user) //Bolt it!
+		set_electrified(ELECTRIFIED_PERMANENT, user)  //Shock it!
 
 
-/obj/machinery/door/airlock/disable_lockdown()
+/obj/machinery/door/airlock/disable_lockdown(mob/user)
 	// Must be powered and have working AI wire.
 	if(canAIControl(src) && !stat)
-		unbolt()
-		set_electrified(NOT_ELECTRIFIED)
+		unbolt(user)
 		open()
 		safe = TRUE
 
@@ -1338,11 +1337,23 @@
 		wires.cut_all()
 		update_icon()
 
-/obj/machinery/door/airlock/proc/set_electrified(seconds)
+/obj/machinery/door/airlock/proc/set_electrified(seconds, mob/user)
 	secondsElectrified = seconds
 	diag_hud_set_electrified()
 	if(secondsElectrified > 0)
 		INVOKE_ASYNC(src, .proc/electrified_loop)
+	if(user)
+		var/msg
+		var/extra_msg
+		if(secondsElectrified == -1)
+			msg = "permanently electrified"
+		else if(secondsElectrified == 0)
+			msg = "unelectrified"
+		else
+			msg = "electrified"
+			extra_msg = "for [DisplayTimeText(secondsElectrified SECONDS)]"
+		LAZYADD(logging_electrification, "\[[time_stamp()]\] [key_name(user)] [msg][extra_msg]")
+		log_combat(user, src, msg, extra_msg)
 
 /obj/machinery/door/airlock/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
@@ -1466,14 +1477,14 @@
 	switch(action)
 		if("disrupt-main")
 			if(!secondsMainPowerLost)
-				loseMainPower()
+				loseMainPower(usr, "- turned off.")
 				update_icon()
 			else
 				to_chat(usr, "Main power is already offline.")
 			. = TRUE
 		if("disrupt-backup")
 			if(!secondsBackupPowerLost)
-				loseBackupPower()
+				loseBackupPower(usr, "- turned off.")
 				update_icon()
 			else
 				to_chat(usr, "Backup power is already offline.")
@@ -1579,7 +1590,7 @@
 	if(wires.is_cut(WIRE_SHOCK))
 		to_chat(user, "Can't un-electrify the airlock - The electrification wire is cut.")
 	else if(isElectrified())
-		set_electrified(0)
+		set_electrified(0, user)
 
 /obj/machinery/door/airlock/proc/shock_temp(mob/user)
 	if(!user_allowed(user))
@@ -1587,7 +1598,7 @@
 	if(wires.is_cut(WIRE_SHOCK))
 		to_chat(user, "The electrification wire has been cut")
 	else
-		LAZYADD(shockedby, "\[[time_stamp()]\] [key_name(user)]")
+		LAZYADD(logging_electrification, "\[[time_stamp()]\] [key_name(user)]")
 		log_combat(user, src, "electrified")
 		set_electrified(AI_ELECTRIFY_DOOR_TIME)
 
@@ -1597,7 +1608,7 @@
 	if(wires.is_cut(WIRE_SHOCK))
 		to_chat(user, "The electrification wire has been cut")
 	else
-		LAZYADD(shockedby, text("\[[time_stamp()]\] [key_name(user)]"))
+		LAZYADD(logging_electrification, text("\[[time_stamp()]\] [key_name(user)]"))
 		log_combat(user, src, "electrified")
 		set_electrified(ELECTRIFIED_PERMANENT)
 
@@ -1628,7 +1639,7 @@
 		to_chat(user, "The door bolts are already up")
 	else
 		if(src.hasPower())
-			unbolt()
+			unbolt(user)
 		else
 			to_chat(user, "Cannot raise door bolts due to power failure")
 
@@ -1638,7 +1649,7 @@
 	if(wires.is_cut(WIRE_BOLTS))
 		to_chat(user, "You can't drop the door bolts - The door bolt dropping wire has been cut.")
 	else
-		bolt()
+		bolt(user)
 
 /obj/machinery/door/airlock/proc/user_toggle_open(mob/user)
 	if(!user_allowed(user))

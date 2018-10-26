@@ -15,8 +15,10 @@
 
 	interaction_flags_atom = INTERACT_ATOM_UI_INTERACT
 
+	var/logging_electrification
+	var/logging_boltedby
+	var/logging_timingby
 	var/secondsElectrified = 0
-	var/shockedby
 	var/visible = TRUE
 	var/operating = FALSE
 	var/glass = FALSE
@@ -70,6 +72,9 @@
 		layer = closingLayer
 	else
 		layer = initial(layer)
+
+/obj/machinery/door/proc/bolt(mob/user, log_message)
+	return
 
 /obj/machinery/door/power_change()
 	..()
@@ -224,7 +229,7 @@
 	if(prob(severity*10 - 20))
 		if(secondsElectrified == 0)
 			secondsElectrified = -1
-			LAZYADD(shockedby, "\[[time_stamp()]\]EM Pulse")
+			LAZYADD(logging_electrification, "\[[time_stamp()]\]EM Pulse")
 			addtimer(CALLBACK(src, .proc/unelectrify), 300)
 
 /obj/machinery/door/proc/unelectrify()
@@ -360,17 +365,11 @@
 /obj/machinery/door/get_dumping_location(obj/item/storage/source,mob/user)
 	return null
 
-/obj/machinery/door/proc/lock()
-	return
-
-/obj/machinery/door/proc/unlock()
-	return
-
 /obj/machinery/door/proc/hostile_lockdown(mob/origin)
 	if(!stat) //So that only powered doors are closed.
 		close() //Close ALL the doors!
 
-/obj/machinery/door/proc/disable_lockdown()
+/obj/machinery/door/proc/disable_lockdown(mob/user, remote_control)
 	if(!stat) //Opens only powered doors.
 		open() //Open everything!
 

@@ -40,9 +40,9 @@
 	var/obj/machinery/door/airlock/A = holder
 	switch(wire)
 		if(WIRE_POWER1, WIRE_POWER2) // Pulse to loose power.
-			A.loseMainPower()
+			A.loseMainPower(usr, "- pulsed wire.")
 		if(WIRE_BACKUP1, WIRE_BACKUP2) // Pulse to loose backup power.
-			A.loseBackupPower()
+			A.loseBackupPower(usr)
 		if(WIRE_OPEN) // Pulse to open door (only works not emagged and ID wire is cut or no access is required).
 			if(A.obj_flags & EMAGGED)
 				return
@@ -53,10 +53,10 @@
 					INVOKE_ASYNC(A, /obj/machinery/door/airlock.proc/close)
 		if(WIRE_BOLTS) // Pulse to toggle bolts (but only raise if power is on).
 			if(!A.locked)
-				A.bolt()
+				A.bolt(usr)
 			else
 				if(A.hasPower())
-					A.unbolt()
+					A.unbolt(usr)
 			A.update_icon()
 		if(WIRE_IDSCAN) // Pulse to disable emergency access and flash red lights.
 			if(A.hasPower() && A.density)
@@ -77,9 +77,9 @@
 					A.aiControlDisabled = -1
 		if(WIRE_SHOCK) // Pulse to shock the door for 10 ticks.
 			if(!A.secondsElectrified)
-				A.set_electrified(30)
+				A.set_electrified(30, usr)
 				if(usr)
-					LAZYADD(A.shockedby, text("\[[time_stamp()]\] [key_name(usr)]"))
+					LAZYADD(A.logging_electrification, text("\[[time_stamp()]\] [key_name(usr)] via wire pulse"))
 					log_combat(usr, A, "electrified")
 		if(WIRE_SAFETY)
 			A.safe = !A.safe
@@ -100,7 +100,7 @@
 				if(usr)
 					A.shock(usr, 50)
 			else
-				A.loseMainPower()
+				A.loseMainPower(usr, "- cut wire.")
 				if(usr)
 					A.shock(usr, 50)
 		if(WIRE_BACKUP1, WIRE_BACKUP2) // Cut to loose backup power, repair all to gain backup power.
@@ -114,7 +114,7 @@
 					A.shock(usr, 50)
 		if(WIRE_BOLTS) // Cut to drop bolts, mend does nothing.
 			if(!mend)
-				A.bolt()
+				A.bolt(usr)
 		if(WIRE_AI) // Cut to disable WIRE_AI control, mend to re-enable.
 			if(mend)
 				if(A.aiControlDisabled == 1) // 0 = normal, 1 = locked out, 2 = overridden by WIRE_AI, -1 = previously overridden by WIRE_AI
@@ -129,13 +129,10 @@
 		if(WIRE_SHOCK) // Cut to shock the door, mend to unshock.
 			if(mend)
 				if(A.secondsElectrified)
-					A.set_electrified(0)
+					A.set_electrified(0, usr)
 			else
 				if(A.secondsElectrified != -1)
-					A.set_electrified(-1)
-					if(usr)
-						LAZYADD(A.shockedby, text("\[[time_stamp()]\] [key_name(usr)]"))
-						log_combat(usr, A, "electrified")
+					A.set_electrified(-1, usr)
 		if(WIRE_SAFETY) // Cut to disable safeties, mend to re-enable.
 			A.safe = mend
 		if(WIRE_TIMING) // Cut to disable auto-close, mend to re-enable.
