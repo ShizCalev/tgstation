@@ -1050,7 +1050,7 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 		if(prefs)
 			prefs.copy_to(body,TRUE,FALSE)
 		if(J)
-			J.equip(body, TRUE, FALSE, outfit_override = outfit_override, disable_alt_appearance = prefs?.disable_alt_outfits)
+			J.equip(body, TRUE, FALSE, outfit_override = outfit_override, disable_alt_appearance = prefs?.alt_outfits_to_use)
 		else if (outfit_override)
 			body.equipOutfit(outfit_override,visualsOnly = TRUE)
 

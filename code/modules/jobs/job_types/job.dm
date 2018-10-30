@@ -48,6 +48,12 @@
 									//probability alternative outfits being selected determined by alternative_job_outfits_probability config option
 	var/list/alternative_outfits_male = list()	//job outfits unique to male characters. gets added to the alternative_outfits list during selection.
 	var/list/alternative_outfits_female = list() //job outfits unique to female characters. hellooooooooooo nurse.
+	var/list/alternative_outfits_formal = list()
+	var/list/alternative_outfits_formal_male = list()
+	var/list/alternative_outfits_formal_female = list()
+	var/list/alternative_outfits_casual = list()
+	var/list/alternative_outfits_casual_male = list()
+	var/list/alternative_outfits_casual_female = list()
 	var/alt_outfit_probability //overrides config set outfit probability. should only be used if necessary, otherwise let the config handle it.
 
 	var/exp_requirements = 0
@@ -104,18 +110,46 @@
 		if(!outfit_to_use) //check to make sure there's no override
 
 			//here be randomized outfits
-			if(CONFIG_GET(flag/alternative_job_outfits) && !(disable_alt_appearance || preference_source?.prefs?.disable_alt_outfits) && has_alternative_outfits && prob(alt_outfit_probability ? alt_outfit_probability : CONFIG_GET(number/alternative_job_outfits_probability)))
-				var/list/alt_outfits = LAZYLEN(alternative_outfits) ? alternative_outfits.Copy() : list()
+			if(CONFIG_GET(flag/alternative_job_outfits) && !(disable_alt_appearance || preference_source?.prefs?.alt_outfits_to_use) && has_alternative_outfits && prob(alt_outfit_probability ? alt_outfit_probability : CONFIG_GET(number/alternative_job_outfits_probability)))
 
+				var/list/alt_outfits = list()
 				var/mob_is_male = (H.gender == MALE) ? TRUE : FALSE
 
-				if(mob_is_male && LAZYLEN(alternative_outfits_male))
-					alt_outfits += alternative_outfits_male
+				switch(preference_source.prefs.alt_outfits_to_use)
+					if(PREF_FORMAL_OUTFITS)
+						if(LAZYLEN(alternative_outfits_formal))
+							alt_outfits += alternative_outfits_formal
 
-				else if(!mob_is_male && LAZYLEN(alternative_outfits_female))
-					alt_outfits += alternative_outfits_female
+						if(mob_is_male && LAZYLEN(alternative_outfits_formal_male))
+							alt_outfits += alternative_outfits_formal_male
 
-				outfit_to_use = pickweight(alt_outfits)
+						else if(!mob_is_male && LAZYLEN(alternative_outfits_formal_female))
+							alt_outfits += alternative_outfits_formal_female
+
+					if(PREF_CASUAL_OUTFITS)
+						if(LAZYLEN(alternative_outfits_casual))
+							alt_outfits += alternative_outfits_casual
+
+						if(mob_is_male && LAZYLEN(alternative_outfits_casual_male))
+							alt_outfits += alternative_outfits_casual_male
+
+						else if(!mob_is_male && LAZYLEN(alternative_outfits_casual_female))
+							alt_outfits += alternative_outfits_casual_female
+
+					if(PREF_ALTERNATIVE_OUTFITS)
+						if(LAZYLEN(alternative_outfits))
+							alt_outfits += alternative_outfits
+
+						if(mob_is_male && LAZYLEN(alternative_outfits_male))
+							alt_outfits += alternative_outfits_male
+
+						else if(!mob_is_male && LAZYLEN(alternative_outfits_female))
+							alt_outfits += alternative_outfits_female
+
+				if(alt_outfits.len)
+					outfit_to_use = pickweight(alt_outfits)
+				else
+					outfit_to_use = outfit
 			else
 				outfit_to_use = outfit
 

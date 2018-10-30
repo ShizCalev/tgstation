@@ -25,6 +25,7 @@ Head of Security
 	exp_type_department = EXP_TYPE_SECURITY
 
 	outfit = /datum/outfit/job/hos
+	alternative_outfits_formal = list(/datum/outfit/job/hos/formal = 1)
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MECH_SECURITY,
 			            ACCESS_FORENSICS_LOCKERS, ACCESS_MORGUE, ACCESS_MAINT_TUNNELS, ACCESS_ALL_PERSONAL_LOCKERS,
@@ -36,6 +37,7 @@ Head of Security
 			            ACCESS_HEADS, ACCESS_HOS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_GATEWAY, ACCESS_MAINT_TUNNELS, ACCESS_MINERAL_STOREROOM)
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_SEC
+
 /datum/outfit/job/hos
 	name = "Head of Security"
 	jobtype = /datum/job/hos
@@ -71,6 +73,11 @@ Head of Security
 	suit_store = /obj/item/tank/internals/oxygen
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/e_gun=1)
 
+/datum/outfit/job/hos/formal
+	name = "Head of Security (Formal)"
+
+	uniform = /obj/item/clothing/under/rank/head_of_security/navyblue
+
 /*
 Warden
 */
@@ -89,6 +96,7 @@ Warden
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/warden
+	alternative_outfits_formal = list(/datum/outfit/job/warden/formal = 1)
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_MECH_SECURITY, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_MECH_SECURITY, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM) //SEE /DATUM/JOB/WARDEN/GET_ACCESS()
@@ -125,6 +133,13 @@ Warden
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
+
+/datum/outfit/job/warden/formal
+	name = "Warden (Formal)"
+
+	uniform = /obj/item/clothing/under/rank/warden/navyblue
+	suit = /obj/item/clothing/suit/armor/vest/warden
+	head = /obj/item/clothing/head/beret/sec/navywarden
 
 /*
 Detective
@@ -316,6 +331,10 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	chameleon_extras = list(/obj/item/gun/energy/e_gun/advtaser, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
+/datum/outfit/job/security/formal
+	name = "Security Officer (Formal)"
+
+	uniform = /obj/item/clothing/under/rank/security/navyblue
 
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()
 	. = ..()

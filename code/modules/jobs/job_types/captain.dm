@@ -17,6 +17,7 @@ Captain
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/captain
+	alternative_outfits_formal = list(/datum/outfit/job/captain/formal = 1)
 
 	access = list() 			//See get_access()
 	minimal_access = list() 	//See get_access()
@@ -53,6 +54,13 @@ Captain
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+
+/datum/outfit/job/captain/formal
+	name = "Captain (Formal)"
+
+	head = /obj/item/clothing/head/caphat/parade
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/alt
+	uniform = /obj/item/clothing/under/captainparade
 
 /datum/outfit/job/captain/hardsuit
 	name = "Captain (Hardsuit)"

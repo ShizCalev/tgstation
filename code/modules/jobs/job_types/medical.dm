@@ -78,9 +78,9 @@ Medical Doctor
 	has_alternative_outfits = TRUE
 	alternative_outfits = list(/datum/outfit/job/doctor/surgeon = 1,
 								/datum/outfit/job/doctor/emt = 3,
-								/datum/outfit/job/doctor/scrubs = 50)
+								/datum/outfit/job/doctor/scrubs = 50) //make EMT and surgeon rare-ish
 	alternative_outfits_female = list(/datum/outfit/job/doctor/nurse = 3)
-
+	alternative_outfits_casual = list(/datum/outfit/job/doctor/scrubs = 1)
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM)
 	paycheck = PAYCHECK_MEDIUM
