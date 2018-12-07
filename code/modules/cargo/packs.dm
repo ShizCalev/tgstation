@@ -77,11 +77,11 @@
 					/obj/item/tank/internals/air,
 					/obj/item/tank/internals/air,
 					/obj/item/tank/internals/air,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas)
+					/obj/item/clothing/mask/breath,
+					/obj/item/clothing/mask/breath,
+					/obj/item/clothing/mask/breath,
+					/obj/item/clothing/mask/breath,
+					/obj/item/clothing/mask/breath)
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 
@@ -91,8 +91,8 @@
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/fire/firefighter,
 					/obj/item/clothing/suit/fire/firefighter,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas,
+					/obj/item/clothing/mask/gas/fire_respirator,
+					/obj/item/clothing/mask/gas/fire_respirator,
 					/obj/item/flashlight,
 					/obj/item/flashlight,
 					/obj/item/tank/internals/oxygen/red,
@@ -116,10 +116,7 @@
 	name = "Internals Crate"
 	desc = "Master your life energy and control your breathing with three breath masks, three emergency oxygen tanks and three large air tanks."//IS THAT A
 	cost = 1000
-	contains = list(/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/gas,
-					/obj/item/clothing/mask/breath,
+	contains = list(/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
 					/obj/item/clothing/mask/breath,
 					/obj/item/tank/internals/emergency_oxygen,

@@ -34,6 +34,13 @@
 
 // ********************************************************************
 
+/obj/item/clothing/mask/gas/fire_respirator
+	name = "fire respirator"
+	desc = "A face mask with a clear visor intended to protect the user from intense heat and smoke."
+	icon_state = "fire_respirator"
+	flags_inv = HIDEEARS|HIDEFACIALHAIR
+	resistance_flags = FIRE_PROOF
+
 //Plague Dr suit can be found in clothing/suits/bio.dm
 /obj/item/clothing/mask/gas/plaguedoctor
 	name = "plague doctor mask"
