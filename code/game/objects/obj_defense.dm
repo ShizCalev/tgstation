@@ -227,6 +227,8 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 		resistance_flags &= ~ON_FIRE
 		cut_overlay(GLOB.fire_overlay, TRUE)
 		SSfire_burning.processing -= src
+		for(var/datum/action/A in actions)
+			A.UpdateButtonIcon(FALSE, TRUE)
 
 /obj/proc/tesla_act(power, tesla_flags, shocked_targets)
 	obj_flags |= BEING_SHOCKED
