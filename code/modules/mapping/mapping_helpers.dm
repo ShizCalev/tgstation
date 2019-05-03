@@ -205,3 +205,23 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 		CRASH("Wrong disease type passed in.")
 	var/datum/disease/D = new disease_type()
 	return list(component_type,D)
+
+GLOBAL_LIST_EMPTY(zlevel_camera_networks)
+
+/obj/effect/mapping_helpers/zlevel_camera_network //sets the camera network of all cameras constructed on the z-level.
+	name = "Z-level Camera Network"
+	icon_state = "camera_network_helper"
+	var/list/network_list = list("ss13")
+
+/obj/effect/mapping_helpers/zlevel_camera_network/Initialize(mapload)
+	. = ..()
+	if(!mapload)
+		log_mapping("[src] spawned outside of mapload!")
+		return
+
+	if(!network_list.len)
+		log_mapping("[src] at [AREACOORD(src)] spawned without a network list!")
+		return
+
+	var/turf/T = get_turf(src)
+	GLOB.zlevel_camera_networks += T.z[network_list]
