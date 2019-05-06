@@ -447,8 +447,7 @@
 "bs" = (
 /obj/machinery/camera{
 	c_tag = "EVA";
-	dir = 4;
-	network = list("mine")
+	dir = 4
 	},
 /obj/machinery/airalarm{
 	dir = 4;
@@ -1326,8 +1325,7 @@
 "dA" = (
 /obj/machinery/camera{
 	c_tag = "Communications Relay";
-	dir = 8;
-	network = list("mine")
+	dir = 8
 	},
 /turf/open/floor/circuit,
 /area/mine/maintenance)
@@ -1357,8 +1355,7 @@
 /obj/item/reagent_containers/blood/random,
 /obj/machinery/camera{
 	c_tag = "Sleeper Room";
-	dir = 1;
-	network = list("mine")
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/mine/living_quarters)
@@ -1431,8 +1428,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Shuttle Docking Foyer";
-	dir = 8;
-	network = list("mine")
+	dir = 8
 	},
 /obj/machinery/newscaster{
 	pixel_x = 30;
@@ -1458,8 +1454,7 @@
 "dN" = (
 /obj/machinery/camera{
 	c_tag = "Processing Area Room";
-	dir = 8;
-	network = list("mine")
+	dir = 8
 	},
 /obj/item/radio/intercom{
 	dir = 8;
@@ -1589,8 +1584,7 @@
 /area/mine/living_quarters)
 "ed" = (
 /obj/machinery/camera{
-	c_tag = "Crew Area Hallway West";
-	network = list("mine")
+	c_tag = "Crew Area Hallway West"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel,
@@ -1645,8 +1639,7 @@
 /area/mine/living_quarters)
 "ej" = (
 /obj/machinery/camera{
-	c_tag = "Crew Area Hallway East";
-	network = list("mine")
+	c_tag = "Crew Area Hallway East"
 	},
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -2110,8 +2103,7 @@
 "fd" = (
 /obj/machinery/camera{
 	c_tag = "Storage";
-	dir = 2;
-	network = list("mine")
+	dir = 2
 	},
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -2261,8 +2253,7 @@
 "ft" = (
 /obj/machinery/camera{
 	c_tag = "Dormitories";
-	dir = 4;
-	network = list("mine")
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
@@ -2424,8 +2415,7 @@
 "fJ" = (
 /obj/machinery/camera{
 	c_tag = "Crew Area";
-	dir = 1;
-	network = list("mine")
+	dir = 1
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = -32
@@ -3897,6 +3887,12 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/living_quarters)
+"FC" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("mine")
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Ho" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -4437,7 +4433,7 @@ aj
 aj
 aj
 aj
-aj
+FC
 "}
 (2,1,1) = {"
 aa
