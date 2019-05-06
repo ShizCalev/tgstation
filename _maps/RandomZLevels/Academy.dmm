@@ -2036,11 +2036,11 @@
 /turf/open/floor/plating,
 /area/awaymission/academy/classrooms)
 "fY" = (
-/mob/living/simple_animal/hostile/wizard,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/wizard,
 /turf/open/floor/plasteel,
 /area/awaymission/academy/classrooms)
 "fZ" = (
@@ -3632,13 +3632,13 @@
 /turf/open/floor/plating,
 /area/awaymission/academy/academygate)
 "kq" = (
-/mob/living/simple_animal/hostile/wizard,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/wizard,
 /turf/open/floor/plasteel,
 /area/awaymission/academy/classrooms)
 "kr" = (
@@ -3692,18 +3692,17 @@
 /turf/open/floor/carpet,
 /area/awaymission/academy/classrooms)
 "kA" = (
-/mob/living/simple_animal/hostile/wizard,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/wizard,
 /turf/open/floor/plasteel/white/corner,
 /area/awaymission/academy/classrooms)
 "kB" = (
 /obj/structure/chair,
-/mob/living/simple_animal/hostile/wizard,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -3714,6 +3713,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/wizard,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/academy/classrooms)
 "kC" = (
@@ -4437,6 +4437,12 @@
 	},
 /turf/open/floor/carpet,
 /area/awaymission/academy/headmaster)
+"pg" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("away_academy")
+	},
+/turf/open/space,
+/area/space)
 "LW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4586,7 +4592,7 @@ aa
 aa
 aa
 aa
-aa
+pg
 "}
 (2,1,1) = {"
 aa

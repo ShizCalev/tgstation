@@ -1210,7 +1210,6 @@
 /turf/open/floor/plating,
 /area/awaymission/research/interior/genetics)
 "cT" = (
-/mob/living/carbon/monkey,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -1221,6 +1220,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/mob/living/carbon/monkey,
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/genetics)
 "cU" = (
@@ -1268,7 +1268,6 @@
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/genetics)
 "cX" = (
-/mob/living/carbon/human,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -1279,6 +1278,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/mob/living/carbon/human,
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/genetics)
 "cY" = (
@@ -1374,7 +1374,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/mob/living/carbon/monkey,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -1385,6 +1384,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/mob/living/carbon/monkey,
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/genetics)
 "dj" = (
@@ -1432,13 +1432,13 @@
 /area/awaymission/research/interior)
 "dn" = (
 /obj/item/ammo_casing/c45,
-/mob/living/simple_animal/hostile/syndicate,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/syndicate,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior)
 "do" = (
@@ -1690,7 +1690,6 @@
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/security)
 "dI" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -1701,6 +1700,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/nanotrasen/ranged,
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/security)
 "dJ" = (
@@ -1796,7 +1796,6 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/mob/living/carbon/human,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -1807,6 +1806,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/mob/living/carbon/human,
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/genetics)
 "dR" = (
@@ -2159,13 +2159,13 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/cryo)
 "eB" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/nanotrasen/ranged,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/cryo)
 "eC" = (
@@ -2229,7 +2229,6 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior)
 "eL" = (
-/mob/living/simple_animal/hostile/syndicate,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
@@ -2237,6 +2236,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/syndicate,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior)
 "eM" = (
@@ -2861,7 +2861,6 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/security)
 "fY" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -2872,6 +2871,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/security)
 "fZ" = (
@@ -3130,7 +3130,6 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/cryo)
 "gv" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -3141,6 +3140,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/nanotrasen/ranged,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/cryo)
 "gw" = (
@@ -3675,7 +3675,6 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/security)
 "hj" = (
-/mob/living/simple_animal/hostile/nanotrasen,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -3686,6 +3685,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/nanotrasen,
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/cryo)
 "hk" = (
@@ -3751,13 +3751,13 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/security)
 "hq" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/security)
 "hr" = (
@@ -4085,7 +4085,6 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/mob/living/carbon/monkey,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -4096,6 +4095,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/mob/living/carbon/monkey,
 /turf/open/floor/plasteel,
 /area/awaymission/research/interior/genetics)
 "hX" = (
@@ -4155,7 +4155,6 @@
 /turf/open/floor/plating,
 /area/awaymission/research/interior/maint)
 "if" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /obj/effect/turf_decal/tile/green{
 	dir = 1
 	},
@@ -4166,6 +4165,7 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior)
 "ig" = (
@@ -4202,6 +4202,12 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/security)
 "ij" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
 /mob/living/simple_animal/bot/secbot/beepsky{
 	desc = "A beefy variant of the standard securitron model.";
 	emagged = 1;
@@ -4209,12 +4215,6 @@
 	health = 50;
 	maxHealth = 50;
 	name = "Officer Genesky"
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/security)
@@ -4561,11 +4561,11 @@
 /turf/open/floor/plasteel/freezer,
 /area/awaymission/research/interior/bathroom)
 "iQ" = (
-/mob/living/simple_animal/hostile/syndicate,
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/green{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/syndicate,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior)
 "iR" = (
@@ -4753,7 +4753,6 @@
 	pixel_x = 32;
 	pixel_y = 26
 	},
-/mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /obj/effect/turf_decal/tile/green{
 	dir = 1
 	},
@@ -4764,6 +4763,7 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior)
 "js" = (
@@ -4991,7 +4991,6 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/medbay)
 "jP" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
@@ -5002,6 +5001,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/medbay)
 "jQ" = (
@@ -5628,7 +5628,6 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/medbay)
 "lr" = (
-/mob/living/simple_animal/hostile/syndicate,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
@@ -5639,6 +5638,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/syndicate,
 /turf/open/floor/plasteel/white,
 /area/awaymission/research/interior/medbay)
 "ls" = (
@@ -6451,6 +6451,12 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/research/interior/maint)
+"AT" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("away_research")
+	},
+/turf/open/space,
+/area/space)
 "Bx" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engine Room";
@@ -6852,7 +6858,7 @@ aa
 aa
 aa
 aa
-aa
+AT
 "}
 (2,1,1) = {"
 aa

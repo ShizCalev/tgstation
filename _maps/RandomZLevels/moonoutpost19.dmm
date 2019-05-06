@@ -3653,8 +3653,7 @@
 /obj/structure/alien/weeds,
 /obj/machinery/camera{
 	c_tag = "Xenobiology Containment South";
-	dir = 1;
-	network = list("mo19x")
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/awaymission/moonoutpost19/research)
@@ -5399,8 +5398,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Arrivals North";
-	dir = 1;
-	network = list("mo19")
+	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -5711,8 +5709,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Kitchen";
-	dir = 8;
-	network = list("mo19")
+	dir = 8
 	},
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
@@ -5867,8 +5864,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera{
 	c_tag = "Bar";
-	dir = 8;
-	network = list("mo19")
+	dir = 8
 	},
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -6423,8 +6419,7 @@
 /obj/item/paper/fluff/awaymissions/moonoutpost19/welcome,
 /obj/machinery/camera{
 	c_tag = "Arrivals South";
-	dir = 8;
-	network = list("mo19")
+	dir = 8
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -6665,8 +6660,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Dormitories";
-	dir = 4;
-	network = list("mo19")
+	dir = 4
 	},
 /turf/open/floor/plasteel{
 	initial_gas_mix = "co2=48.7;n2=13.2;o2=32.4;TEMP=251";
@@ -7149,6 +7143,12 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/moonoutpost19/research)
+"QD" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("mo19")
+	},
+/turf/open/space,
+/area/space)
 "Wf" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -7414,7 +7414,7 @@ aa
 aa
 aa
 aa
-aa
+QD
 "}
 (2,1,1) = {"
 aa

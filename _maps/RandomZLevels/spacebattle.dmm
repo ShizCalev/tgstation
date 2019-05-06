@@ -2595,13 +2595,13 @@
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "jK" = (
-/mob/living/simple_animal/hostile/syndicate/melee/sword,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/syndicate/melee/sword,
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "jL" = (
@@ -2901,6 +2901,12 @@
 "Dv" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/awaymission/spacebattle/syndicate3)
+"UB" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("away_spacebattle")
+	},
+/turf/closed/mineral/random,
+/area/space/nearstation)
 "UZ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/awaymission/spacebattle/syndicate1)
@@ -3166,7 +3172,7 @@ aa
 aa
 aa
 aa
-aa
+UB
 "}
 (2,1,1) = {"
 aa

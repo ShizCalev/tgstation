@@ -964,6 +964,12 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin)
+"oa" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("away_cabin")
+	},
+/turf/closed/indestructible/rock/snow,
+/area/space)
 
 (1,1,1) = {"
 aa
@@ -1220,7 +1226,7 @@ aa
 aa
 aa
 aa
-aa
+oa
 "}
 (2,1,1) = {"
 aa

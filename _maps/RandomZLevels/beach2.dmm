@@ -387,6 +387,12 @@
 /obj/effect/baseturf_helper/beach/sand,
 /turf/open/floor/plating/beach/sand,
 /area/awaymission/beach)
+"eY" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("away_beach2")
+	},
+/turf/open/space,
+/area/space)
 
 (1,1,1) = {"
 aa
@@ -643,7 +649,7 @@ aa
 aa
 aa
 aa
-aa
+eY
 "}
 (2,1,1) = {"
 aa

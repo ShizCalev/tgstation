@@ -15059,6 +15059,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/snowdin/post/mining_main)
+"JR" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("virtual_reality_snowdin")
+	},
+/turf/closed/indestructible/rock/snow,
+/area/awaymission/snowdin/cave/mountain)
 "JU" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -15940,7 +15946,7 @@ ac
 ac
 ac
 ac
-ac
+JR
 "}
 (2,1,1) = {"
 ac

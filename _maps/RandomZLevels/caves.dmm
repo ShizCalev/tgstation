@@ -2276,6 +2276,12 @@
 /obj/effect/baseturf_helper/asteroid/basalt,
 /turf/closed/wall,
 /area/awaymission/caves/northblock)
+"ow" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("away_caves")
+	},
+/turf/closed/indestructible/rock,
+/area/space/nearstation)
 
 (1,1,1) = {"
 aa
@@ -2532,7 +2538,7 @@ aa
 aa
 aa
 aa
-aa
+ow
 "}
 (2,1,1) = {"
 aa

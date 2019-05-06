@@ -56,8 +56,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Hallway - Escape Left Wing 3";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/plasteel/white/side{
 	dir = 8
@@ -82,8 +81,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Hallway - Escape Right Wing 3";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /turf/open/floor/plasteel/white/side{
 	dir = 4
@@ -311,8 +309,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Chapel Cremator";
-	dir = 2;
-	network = list("ss13")
+	dir = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/chapel/office)
@@ -413,8 +410,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/camera{
 	c_tag = "Hallway - Escape Right Wing 2";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /turf/open/floor/plasteel/white/side{
 	dir = 4
@@ -1427,8 +1423,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Chapel Mass Driver";
-	dir = 2;
-	network = list("ss13")
+	dir = 2
 	},
 /turf/open/floor/plasteel/grimy,
 /area/chapel/office)
@@ -1438,8 +1433,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Chapel Airlock";
-	dir = 2;
-	network = list("ss13")
+	dir = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/chapel/office)
@@ -1746,8 +1740,7 @@
 "aeK" = (
 /obj/machinery/camera{
 	c_tag = "Civilian - Chapel Main 2";
-	dir = 2;
-	network = list("ss13")
+	dir = 2
 	},
 /turf/open/floor/plasteel/chapel{
 	dir = 8
@@ -4615,8 +4608,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Dorm Fitness 2";
-	dir = 2;
-	network = list("ss13")
+	dir = 2
 	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/fitness)
@@ -6763,8 +6755,7 @@
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/camera{
 	c_tag = "Civilian - Dorm Main 1";
-	dir = 2;
-	network = list("ss13")
+	dir = 2
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 28
@@ -6784,8 +6775,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Dorm Holodeck";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/fitness)
@@ -7784,8 +7774,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Dorm Laundry Room";
-	dir = 2;
-	network = list("ss13")
+	dir = 2
 	},
 /obj/item/radio/intercom{
 	pixel_y = 24
@@ -28183,8 +28172,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Dorm Fitness 3";
-	dir = 1;
-	network = list("ss13")
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/fitness)
@@ -32017,8 +32005,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Cargo - Docking Bay";
-	dir = 1;
-	network = list("ss13")
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
@@ -32237,8 +32224,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Dorm Fitness 1";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -32739,8 +32725,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Commissary";
-	dir = 1;
-	network = list("ss13")
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/vacant_room/commissary)
@@ -33702,8 +33687,7 @@
 /obj/effect/turf_decal/tile/neutral,
 /obj/machinery/camera{
 	c_tag = "Civilian - Dorm Main 2";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /obj/structure/sign/poster/official/help_others{
 	pixel_x = 32
@@ -35535,8 +35519,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Cargo - Quartermaster's Office";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/qm)
@@ -35698,8 +35681,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Cargo - Main 2";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
@@ -36496,8 +36478,7 @@
 "bBf" = (
 /obj/machinery/camera{
 	c_tag = "Civilian - Chapel Main 3";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /turf/open/floor/plasteel/chapel,
 /area/chapel/main)
@@ -38252,8 +38233,7 @@
 /obj/item/screwdriver,
 /obj/machinery/camera{
 	c_tag = "Cargo - Main 1";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/office)
@@ -38800,8 +38780,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Cargo - Front Lobby";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/office)
@@ -43367,8 +43346,7 @@
 /obj/effect/turf_decal/tile/neutral,
 /obj/machinery/camera{
 	c_tag = "Civilian - Dorm Main 3";
-	dir = 1;
-	network = list("ss13")
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/fitness/recreation)
@@ -43404,8 +43382,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Garden Main 1";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/grass,
 /area/hydroponics/garden)
@@ -43413,8 +43390,7 @@
 /obj/machinery/light,
 /obj/machinery/camera{
 	c_tag = "Civilian - Garden Main 2";
-	dir = 1;
-	network = list("ss13")
+	dir = 1
 	},
 /turf/open/floor/grass,
 /area/hydroponics/garden)
@@ -43424,8 +43400,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/camera{
 	c_tag = "Civilian - Library Main 2";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/library)
@@ -43441,16 +43416,14 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Library Lounge";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/library/lounge)
 "bOy" = (
 /obj/machinery/camera{
 	c_tag = "Civilian - Library Main 1";
-	dir = 8;
-	network = list("ss13")
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/library)
@@ -43638,8 +43611,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera{
 	c_tag = "Secure - Gateway";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/gateway)
@@ -43913,8 +43885,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Chapel Morgue";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/morgue)
@@ -46394,8 +46365,7 @@
 /obj/structure/table/wood,
 /obj/machinery/camera{
 	c_tag = "Civilian - Chapel Main 1";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /turf/open/floor/plasteel/chapel{
 	dir = 1
@@ -46626,8 +46596,7 @@
 "bVr" = (
 /obj/machinery/camera{
 	c_tag = "Civilian - Chapel Office";
-	dir = 2;
-	network = list("ss13")
+	dir = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -49905,8 +49874,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Hallway - Escape Left Wing 2";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plasteel/white/side{
@@ -53985,8 +53953,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Hallway - Escape Right Wing 1";
-	dir = 1;
-	network = list("ss13")
+	dir = 1
 	},
 /obj/item/radio/intercom{
 	dir = 2;
@@ -55882,8 +55849,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Hallway - Escape Left Wing 1";
-	dir = 1;
-	network = list("ss13")
+	dir = 1
 	},
 /obj/item/radio/intercom{
 	dir = 2;
@@ -56633,8 +56599,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Civilian - Tool Storage";
-	dir = 4;
-	network = list("ss13")
+	dir = 4
 	},
 /obj/item/radio/intercom{
 	pixel_x = -29

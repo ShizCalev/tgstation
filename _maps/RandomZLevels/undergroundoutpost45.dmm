@@ -565,8 +565,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/camera{
 	c_tag = "Arrivals";
-	dir = 8;
-	network = list("uo45")
+	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -2453,8 +2452,7 @@
 /area/awaymission/undergroundoutpost45/central)
 "eY" = (
 /obj/machinery/computer/security{
-	dir = 1;
-	network = list("uo45")
+	dir = 1
 	},
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -2542,8 +2540,7 @@
 "fg" = (
 /obj/machinery/camera{
 	c_tag = "Hydroponics";
-	dir = 1;
-	network = list("uo45")
+	dir = 1
 	},
 /obj/machinery/power/apc/highcap/fifteen_k{
 	dir = 2;
@@ -2966,8 +2963,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Central Hallway";
-	dir = 1;
-	network = list("uo45")
+	dir = 1
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -3638,8 +3634,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Kitchen";
-	dir = 8;
-	network = list("uo45")
+	dir = 8
 	},
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -4810,8 +4805,7 @@
 "jz" = (
 /obj/machinery/camera{
 	c_tag = "Bar";
-	dir = 8;
-	network = list("uo45")
+	dir = 8
 	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/bar,
@@ -6383,8 +6377,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Engineering Secure Storage";
-	dir = 2;
-	network = list("uo45")
+	dir = 2
 	},
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -7107,8 +7100,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "no" = (
 /obj/machinery/computer/security{
-	dir = 4;
-	network = list("uo45")
+	dir = 4
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -7657,8 +7649,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /obj/machinery/camera{
 	c_tag = "Dormitories";
-	dir = 2;
-	network = list("uo45")
+	dir = 2
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -9218,8 +9209,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Atmospherics";
-	dir = 2;
-	network = list("uo45")
+	dir = 2
 	},
 /obj/structure/table,
 /obj/item/clothing/gloves/color/yellow,
@@ -9879,8 +9869,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Engineering Hallway";
-	dir = 4;
-	network = list("uo45")
+	dir = 4
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -10983,8 +10972,7 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "tz" = (
 /obj/machinery/computer/security{
-	dir = 1;
-	network = list("uo45")
+	dir = 1
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch for the security privacy shutters.";
@@ -12311,8 +12299,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Engineering Foyer";
-	dir = 1;
-	network = list("uo45")
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
@@ -13372,8 +13359,7 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Mining";
-	dir = 4;
-	network = list("uo45")
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
@@ -13912,8 +13898,11 @@
 	},
 /area/awaymission/undergroundoutpost45/caves)
 "zi" = (
+/obj/effect/mapping_helpers/zlevel_camera_network{
+	network_list = list("uo45")
+	},
 /turf/open/space,
-/area/space/nearstation)
+/area/space)
 "KE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
