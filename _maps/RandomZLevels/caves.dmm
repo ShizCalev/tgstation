@@ -2278,7 +2278,7 @@
 /area/awaymission/caves/northblock)
 "ow" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_caves")
+	network = "away_caves"
 	},
 /turf/closed/indestructible/rock,
 /area/space/nearstation)

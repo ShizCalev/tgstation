@@ -15847,7 +15847,7 @@
 /area/awaymission/snowdin/post/garage)
 "Yo" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_snowdin")
+	network = list("away_snowdin")
 	},
 /turf/closed/indestructible/rock/snow,
 /area/awaymission/snowdin/cave/mountain)

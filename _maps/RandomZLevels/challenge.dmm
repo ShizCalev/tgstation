@@ -1153,7 +1153,7 @@
 /area/awaymission/challenge/end)
 "TP" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_challenge")
+	network = "away_challenge"
 	},
 /turf/open/space,
 /area/space)

@@ -3889,7 +3889,7 @@
 /area/mine/living_quarters)
 "FC" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("mine")
+	network = "mine"
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)

@@ -6453,7 +6453,7 @@
 /area/awaymission/research/interior/maint)
 "AT" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_research")
+	network = list("away_research")
 	},
 /turf/open/space,
 /area/space)

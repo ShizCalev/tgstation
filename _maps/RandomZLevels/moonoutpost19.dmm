@@ -7145,7 +7145,7 @@
 /area/awaymission/moonoutpost19/research)
 "QD" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("mo19")
+	network = "mo19"
 	},
 /turf/open/space,
 /area/space)

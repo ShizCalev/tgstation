@@ -2903,7 +2903,7 @@
 /area/awaymission/spacebattle/syndicate3)
 "UB" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_spacebattle")
+	network = "away_spacebattle"
 	},
 /turf/closed/mineral/random,
 /area/space/nearstation)

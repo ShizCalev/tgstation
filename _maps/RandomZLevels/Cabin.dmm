@@ -966,7 +966,7 @@
 /area/awaymission/cabin)
 "oa" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_cabin")
+	network = "away_cabin"
 	},
 /turf/closed/indestructible/rock/snow,
 /area/space)

@@ -211,7 +211,7 @@ GLOBAL_LIST_EMPTY(zlevel_camera_networks)
 /obj/effect/mapping_helpers/zlevel_camera_network //sets the camera network of all cameras constructed on the z-level.
 	name = "Z-level Camera Network"
 	icon_state = "camera_network_helper"
-	var/list/network_list = list("ss13")
+	var/network = "ss13"
 
 /obj/effect/mapping_helpers/zlevel_camera_network/Initialize(mapload)
 	. = ..()
@@ -219,9 +219,9 @@ GLOBAL_LIST_EMPTY(zlevel_camera_networks)
 		log_mapping("[src] spawned outside of mapload!")
 		return
 
-	if(!network_list.len)
-		log_mapping("[src] at [AREACOORD(src)] spawned without a network list!")
+	if(!network)
+		log_mapping("[src] at [AREACOORD(src)] spawned without a network!")
 		return
 
 	var/turf/T = get_turf(src)
-	GLOB.zlevel_camera_networks += T.z[network_list]
+	GLOB.zlevel_camera_networks[T.z] += network

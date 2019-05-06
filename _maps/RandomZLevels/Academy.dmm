@@ -4439,7 +4439,7 @@
 /area/awaymission/academy/headmaster)
 "pg" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_academy")
+	network = "away_academy"
 	},
 /turf/open/space,
 /area/space)

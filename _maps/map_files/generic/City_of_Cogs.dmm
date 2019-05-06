@@ -306,7 +306,7 @@
 /area/reebe/city_of_cogs)
 "Mw" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("reebe")
+	network = "reebe"
 	},
 /turf/open/indestructible/reebe_void,
 /area/reebe)

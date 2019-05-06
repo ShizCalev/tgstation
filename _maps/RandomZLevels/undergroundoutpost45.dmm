@@ -13899,7 +13899,7 @@
 /area/awaymission/undergroundoutpost45/caves)
 "zi" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("uo45")
+	network = "uo45"
 	},
 /turf/open/space,
 /area/space)

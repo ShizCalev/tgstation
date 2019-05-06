@@ -2066,7 +2066,7 @@
 /area/awaymission/wildwest/mines)
 "iH" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_wildwest")
+	network = "away_wildwest"
 	},
 /turf/open/space,
 /area/space)

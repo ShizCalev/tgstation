@@ -389,7 +389,7 @@
 /area/awaymission/beach)
 "eY" = (
 /obj/effect/mapping_helpers/zlevel_camera_network{
-	network_list = list("away_beach2")
+	network = "away_beach2"
 	},
 /turf/open/space,
 /area/space)

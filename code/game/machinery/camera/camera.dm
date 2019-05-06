@@ -56,7 +56,7 @@
 	. = ..()
 
 	if((network == initial(network)) && (loc.z in GLOB.zlevel_camera_networks))
-		network = GLOB.zlevel_camera_networks[loc.z]
+		network = list(GLOB.zlevel_camera_networks[loc.z])
 
 	for(var/i in network)
 		network -= i
