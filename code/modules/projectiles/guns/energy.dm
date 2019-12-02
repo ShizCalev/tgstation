@@ -21,6 +21,12 @@
 	var/use_cyborg_cell = FALSE //whether the gun's cell drains the cyborg user's cell to recharge
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 
+/obj/item/gun/energy/handle_atom_del(atom/A)
+	if(A == cell)
+		update_icon(TRUE, TRUE)
+	return ..()
+
+
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
