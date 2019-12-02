@@ -52,6 +52,11 @@
 		START_PROCESSING(SSobj, src)
 	update_icon()
 
+/obj/item/gun/energy/examine(mob/user)
+	. = ..()
+	if(!cell)
+		. += "<span class='notice'>[src] does not have a power cell installed.</span>"
+
 /obj/item/gun/energy/proc/update_ammo_types()
 	var/obj/item/ammo_casing/energy/shot
 	for (var/i = 1, i <= ammo_type.len, i++)
