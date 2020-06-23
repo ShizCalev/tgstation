@@ -1012,6 +1012,9 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			if(!H.mob_negates_gravity())
 				continue //You can't pull someone nailed to the deck
 		step_towards(P,center)
+		step_towards(P,center)
+		step_towards(P,center)
+		step_towards(P,center)
 
 /obj/machinery/power/supermatter_crystal/proc/supermatter_anomaly_gen(turf/anomalycenter, type = FLUX_ANOMALY, anomalyrange = 5)
 	var/turf/L = pick(orange(anomalyrange, anomalycenter))
