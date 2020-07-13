@@ -88,7 +88,7 @@
 	/// Internals box. Will be inserted at the start of backpack_contents
 	var/box
 
-	/** 
+	/**
 	  * Any implants the mob should start implanted with
 	  *
 	  * Format of this list is (typepath, typepath, typepath)
@@ -156,31 +156,44 @@
 
 	//Start with uniform,suit,backpack for additional slots
 	if(uniform)
-		H.equip_to_slot_or_del(new uniform(H),ITEM_SLOT_ICLOTHING, TRUE)
+		if(!H.equip_to_slot_or_del(new uniform(H),ITEM_SLOT_ICLOTHING, TRUE))
+			stack_trace("Unable to equip uniform [uniform] in outfit [name].")
 	if(suit)
-		H.equip_to_slot_or_del(new suit(H),ITEM_SLOT_OCLOTHING, TRUE)
+		if(!H.equip_to_slot_or_del(new suit(H),ITEM_SLOT_OCLOTHING, TRUE))
+			stack_trace("Unable to equip suit [suit] in outfit [name].")
 	if(back)
-		H.equip_to_slot_or_del(new back(H),ITEM_SLOT_BACK, TRUE)
+		if(!H.equip_to_slot_or_del(new back(H),ITEM_SLOT_BACK, TRUE))
+			stack_trace("Unable to equip back [back] in outfit [name].")
 	if(belt)
-		H.equip_to_slot_or_del(new belt(H),ITEM_SLOT_BELT, TRUE)
+		if(!H.equip_to_slot_or_del(new belt(H),ITEM_SLOT_BELT, TRUE))
+			stack_trace("Unable to equip belt [belt] in outfit [name].")
 	if(gloves)
-		H.equip_to_slot_or_del(new gloves(H),ITEM_SLOT_GLOVES, TRUE)
+		if(!H.equip_to_slot_or_del(new gloves(H),ITEM_SLOT_GLOVES, TRUE))
+			stack_trace("Unable to equip gloves [gloves] in outfit [name].")
 	if(shoes)
-		H.equip_to_slot_or_del(new shoes(H),ITEM_SLOT_FEET, TRUE)
+		if(!H.equip_to_slot_or_del(new shoes(H),ITEM_SLOT_FEET, TRUE))
+			stack_trace("Unable to equip shoes [shoes] in outfit [name].")
 	if(head)
-		H.equip_to_slot_or_del(new head(H),ITEM_SLOT_HEAD, TRUE)
+		if(!H.equip_to_slot_or_del(new head(H),ITEM_SLOT_HEAD, TRUE))
+			stack_trace("Unable to equip head [head] in outfit [name].")
 	if(mask)
-		H.equip_to_slot_or_del(new mask(H),ITEM_SLOT_MASK, TRUE)
+		if(!H.equip_to_slot_or_del(new mask(H),ITEM_SLOT_MASK, TRUE))
+			stack_trace("Unable to equip mask [mask] in outfit [name].")
 	if(neck)
-		H.equip_to_slot_or_del(new neck(H),ITEM_SLOT_NECK, TRUE)
+		if(!H.equip_to_slot_or_del(new neck(H),ITEM_SLOT_NECK, TRUE))
+			stack_trace("Unable to equip neck [neck] in outfit [name].")
 	if(ears)
-		H.equip_to_slot_or_del(new ears(H),ITEM_SLOT_EARS, TRUE)
+		if(!H.equip_to_slot_or_del(new ears(H),ITEM_SLOT_EARS, TRUE))
+			stack_trace("Unable to equip ears [ears] in outfit [name].")
 	if(glasses)
-		H.equip_to_slot_or_del(new glasses(H),ITEM_SLOT_EYES, TRUE)
+		if(!H.equip_to_slot_or_del(new glasses(H),ITEM_SLOT_EYES, TRUE))
+			stack_trace("Unable to equip glasses [glasses] in outfit [name].")
 	if(id)
-		H.equip_to_slot_or_del(new id(H),ITEM_SLOT_ID, TRUE)
+		if(!H.equip_to_slot_or_del(new id(H),ITEM_SLOT_ID, TRUE))
+			stack_trace("Unable to equip id [id] in outfit [name].")
 	if(suit_store)
-		H.equip_to_slot_or_del(new suit_store(H),ITEM_SLOT_SUITSTORE, TRUE)
+		if(!H.equip_to_slot_or_del(new suit_store(H),ITEM_SLOT_SUITSTORE, TRUE))
+			stack_trace("Unable to equip suit_store [suit_store] in outfit [name].")
 
 	if(undershirt)
 		H.undershirt = initial(undershirt.name)
@@ -190,7 +203,7 @@
 		if(U)
 			U.attach_accessory(new accessory(H))
 		else
-			WARNING("Unable to equip accessory [accessory] in outfit [name]. No uniform present!")
+			stack_trace("Unable to equip accessory [accessory] in outfit [name]. No uniform present!")
 
 	if(l_hand)
 		H.put_in_l_hand(new l_hand(H))
@@ -199,10 +212,11 @@
 
 	if(!visualsOnly) // Items in pockets or backpack don't show up on mob's icon.
 		if(l_pocket)
-			H.equip_to_slot_or_del(new l_pocket(H),ITEM_SLOT_LPOCKET, TRUE)
+			if(!H.equip_to_slot_or_del(new l_pocket(H),ITEM_SLOT_LPOCKET, TRUE))
+				stack_trace("Unable to equip l_pocket [l_pocket] in outfit [name].")
 		if(r_pocket)
-			H.equip_to_slot_or_del(new r_pocket(H),ITEM_SLOT_RPOCKET, TRUE)
-
+			if(!H.equip_to_slot_or_del(new r_pocket(H),ITEM_SLOT_RPOCKET, TRUE))
+				stack_trace("Unable to equip r_pocket [r_pocket] in outfit [name].")
 		if(box)
 			if(!backpack_contents)
 				backpack_contents = list()
@@ -215,7 +229,8 @@
 				if(!isnum(number))//Default to 1
 					number = 1
 				for(var/i in 1 to number)
-					H.equip_to_slot_or_del(new path(H),ITEM_SLOT_BACKPACK, TRUE)
+					if(!H.equip_to_slot_or_del(new path(H),ITEM_SLOT_BACKPACK, TRUE))
+						stack_trace("Unable to equip backpack_contents [path] in outfit [name].")
 
 	if(!H.head && toggle_helmet && istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit))
 		var/obj/item/clothing/suit/space/hardsuit/HS = H.wear_suit
